@@ -1,0 +1,22 @@
+=> python@3.9
+Python has been installed as
+/usr/local/bin/python3.9
+Unversioned and major-versioned symlinks 'python', 'python3', 'python-config', 'python3-config', 'pip', 'pip3', etc
+: pointing to
+python3.9', 'python3.9-config', 'pip3.9' etc., respectively, have been installed into
+/usr/local/opt/python@3.9/libexec/bin
+You can install Python packages with
+pip3.9 install ‹package>
+They will install into the site-package directory
+/usr/local/lib/python3.9/site-packages
+tkinter is no longer included with this formula, but it is available separately:
+brew install python-tk@3.9
+If you do not need a specific version of Python, and always want Homebrew's 'python3' in your PATH:
+brew install python3
+See: https://docs.brew. sh/Homebrew-and-Python
+==> selenium-server
+To start selenium-server now and restart at login:
+brew services start selenium-server
+Or, if you don't want/need a background service you can just run:
+/usr/ local/opt/selenium-server/bin/selenium-server standalone --port 4444
+(base)
