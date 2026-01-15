@@ -4,13 +4,50 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is a multi-project repository containing experimental React and Next.js applications:
+This is a multi-project monorepo containing experimental React and Next.js applications. Each project is independent with its own package.json and node_modules.
 
-- **startrek-website**: A Create React App project using styled-components for theming
+### Projects:
+- **startrek-website**: A Create React App project demonstrating styled-components theming
 - **startrek-gallery**: A Create React App project with React Router and Axios for image galleries
-- **carparts**: A Next.js 14 TypeScript project with interactive car parts diagrams
+- **carparts**: A Next.js 14 TypeScript project with an interactive drag-and-drop car parts diagram
 - **Mind Map**: Non-code project directory
 - **Our winter trip 2024-2025**: Non-code project directory
+
+**Note**: This is NOT a workspace/monorepo setup. Each project must be developed independently by navigating to its directory.
+
+## Project Creation Tool
+
+This repository includes `mkproject.sh`, a shell script for creating new projects with automatic scaffolding.
+
+### Usage
+
+```bash
+mkproject <project-name>
+```
+
+The script is automatically loaded in your shell via ~/.zshrc and is available as a command from anywhere.
+
+### What mkproject Does
+
+1. **Automatically runs `git init`** - Git initialization is built into the command
+2. Creates a comprehensive `.gitignore` file suitable for Node.js/React/Next.js/Python projects
+3. Offers 6 project types:
+   - **Plain** - Git + .gitignore only
+   - **Node.js** - npm init
+   - **React** - Vite + React template
+   - **Next.js** - create-next-app with TypeScript, Tailwind, App Router
+   - **TypeScript Node** - npm init + TypeScript setup
+   - **Python** - venv + VS Code configuration + requirements.txt
+4. Creates an initial README.md
+5. Makes an initial git commit
+6. Automatically opens the project in VS Code if available
+
+### Script Location
+
+- **Primary**: `/Users/sergevilleneuve/Documents/MyExperiments/mkproject.sh` (version controlled)
+- **Loaded by**: `~/.zshrc` (sources the script automatically)
+
+This ensures the script is backed up in git and never lost again.
 
 ## Project-Specific Commands
 
@@ -23,9 +60,11 @@ npm run build      # Production build
 ```
 
 **Architecture:**
-- Uses styled-components with theme provider pattern
-- Theme configuration defines colors (primary, secondary, background, text) and fonts (main, title)
+- Uses styled-components for CSS-in-JS styling
+- Theme properties accessed via `${({ theme }) => theme.property}` in styled components
+- Theme defines colors (primary, secondary, background, text) and fonts (main, title)
 - Single-page layout with Header, Main, Footer components defined as styled components
+- react-icons library used for icon components (e.g., FaStar)
 
 ### startrek-gallery
 ```bash
@@ -36,13 +75,14 @@ npm run build      # Production build
 ```
 
 **Architecture:**
-- React Router DOM v6 with client-side routing
+- React Router DOM v6 (package version 6.24.1, but uses v5 API with `Switch` and `component` prop)
 - Component structure:
   - `HomePage`: Landing page component
   - `ImageGallery`: Displays grid of images fetched via Axios
   - `ImageDetail`: Shows individual image details using URL params
 - API integration pattern: useEffect hooks with Axios for data fetching
 - Routes: `/` (home), `/gallery` (gallery), `/gallery/:id` (detail)
+- Navigation implemented with React Router's `Link` component
 
 ### carparts
 ```bash
@@ -96,9 +136,13 @@ The car parts diagram uses a coordinate mapping system where:
 
 All React projects use React Testing Library and Jest:
 ```bash
-npm test           # Interactive test runner
-npm test -- --coverage  # Run with coverage report
+npm test                      # Interactive test runner in watch mode
+npm test -- --coverage        # Run with coverage report
+npm test -- --testPathPattern=<file>  # Run specific test file
+npm test -- --testNamePattern=<pattern>  # Run tests matching pattern
 ```
+
+In Next.js (carparts), testing is not configured by default. Tests would need to be set up separately.
 
 ## Important Notes
 
