@@ -24,16 +24,17 @@ MyExperiments/
 │   ├── weatherAppDemo/            # React weather app
 │   └── opencode/                  # Docker-based development environment
 │
-├── MyExperiments_Docs/            # Centralized documentation
-│   ├── AGENTS.md
-│   ├── SkillSet_instruction.md
-│   └── [other documentation files]
-│
-└── Archive/                       # Non-essential items
+└── Archive/                       # Non-essential items (docs live with projects)
     ├── Personal/                  # Personal projects and documents
     ├── ExperimentalProjects/      # Experimental/inactive projects
-    ├── Media/                     # Images and media files
-    └── ZipArchives/               # Compressed archives
+    │   ├── Agent-Threads/         # (includes Understanding Agent Threads Framework.md)
+    │   ├── Hybrid_LLM/            # (includes Hybrid LLM Gateway doc)
+    │   ├── full-stack-creator-and-doc-custodian/  # (includes SkillSet_instruction.md)
+    │   └── [other projects]
+    ├── Media/                     # Images, screenshots, and media files
+    ├── ZipArchives/               # Compressed archives
+    ├── Learning/                  # Learning materials and video analyses
+    └── Guides/                    # Cross-project guides and procedures
 ```
 
 ### Active Projects:
@@ -47,6 +48,23 @@ MyExperiments/
 - **opencode**: Docker-based development environment
 
 **Note**: This is NOT a workspace/monorepo setup. Each project must be developed independently by navigating to its directory.
+
+### Documentation Philosophy
+
+**Project-specific docs live with their projects.** Documentation should never be separated from the code it describes. This ensures:
+- ✅ Docs stay in sync with code changes
+- ✅ Each project is self-contained and portable
+- ✅ Easy to find relevant documentation
+
+**Cross-project resources:**
+- `CLAUDE.md` (this file) - Repository-level AI guidance
+- `Archive/Guides/` - Cross-project procedures and methodologies
+- `Archive/Learning/` - Learning materials, video analyses, research
+
+**Each project should have:**
+- Its own README.md, CLAUDE.md, or similar documentation
+- Docs in the same directory as the code they describe
+- No reliance on external documentation repositories
 
 ## Project Creation Tool
 
