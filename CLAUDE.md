@@ -44,12 +44,13 @@ The script is automatically loaded in your shell via ~/.zshrc and is available a
 
 ### Script Location
 
-The mkproject utility is maintained in its own standalone repository:
+The mkproject utility is maintained in this repository:
 
-- **Repository**: `/Users/sergevilleneuve/Documents/mkproject/`
+- **Directory**: `/Users/sergevilleneuve/Documents/MyExperiments/mkproject/`
+- **GitHub**: `https://github.com/sergeville/mkproject`
 - **Loaded by**: `~/.zshrc` (sources the script automatically)
 
-See the mkproject repository for full documentation and source code.
+See the mkproject directory for full documentation and source code.
 
 ## Project-Specific Commands
 

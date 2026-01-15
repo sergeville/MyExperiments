@@ -1,0 +1,3 @@
+[submodule "mkproject"]
+	path = mkproject
+	url = https://github.com/sergeville/mkproject.git
