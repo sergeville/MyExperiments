@@ -6,12 +6,45 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a multi-project monorepo containing experimental React and Next.js applications. Each project is independent with its own package.json and node_modules.
 
-### Projects:
+The repository follows the **"Essential Root" Organization Method** with a clean, minimalist structure:
+
+### Directory Structure
+
+```
+MyExperiments/
+├── CLAUDE.md                      # This file - AI guidance
+│
+├── ACTIVE PROJECTS (Root Level)
+│   ├── startrek-website/          # React + styled-components
+│   ├── startrek-gallery/          # React + Router + Axios
+│   ├── carparts/                  # Next.js 14 + TypeScript
+│   ├── mkproject/                 # Project scaffolding utility (git submodule)
+│   ├── HVAC_ideas/                # HVAC multi-agent system
+│   ├── simcity-threejs-clone/     # Three.js SimCity clone
+│   ├── weatherAppDemo/            # React weather app
+│   └── opencode/                  # Docker-based development environment
+│
+├── MyExperiments_Docs/            # Centralized documentation
+│   ├── AGENTS.md
+│   ├── SkillSet_instruction.md
+│   └── [other documentation files]
+│
+└── Archive/                       # Non-essential items
+    ├── Personal/                  # Personal projects and documents
+    ├── ExperimentalProjects/      # Experimental/inactive projects
+    ├── Media/                     # Images and media files
+    └── ZipArchives/               # Compressed archives
+```
+
+### Active Projects:
 - **startrek-website**: A Create React App project demonstrating styled-components theming
 - **startrek-gallery**: A Create React App project with React Router and Axios for image galleries
 - **carparts**: A Next.js 14 TypeScript project with an interactive drag-and-drop car parts diagram
-- **Mind Map**: Non-code project directory
-- **Our winter trip 2024-2025**: Non-code project directory
+- **mkproject**: Project scaffolding utility (see Project Creation Tool section below)
+- **HVAC_ideas**: Multi-agent HVAC technical assistant system
+- **simcity-threejs-clone**: Three.js-based SimCity clone
+- **weatherAppDemo**: React weather application with Vite
+- **opencode**: Docker-based development environment
 
 **Note**: This is NOT a workspace/monorepo setup. Each project must be developed independently by navigating to its directory.
 
