@@ -17,7 +17,7 @@ This is a multi-project monorepo containing experimental React and Next.js appli
 
 ## Project Creation Tool
 
-This repository includes `mkproject.sh`, a shell script for creating new projects with automatic scaffolding.
+The `mkproject` utility is available for creating new projects with automatic scaffolding.
 
 ### Usage
 
@@ -44,10 +44,12 @@ The script is automatically loaded in your shell via ~/.zshrc and is available a
 
 ### Script Location
 
-- **Primary**: `/Users/sergevilleneuve/Documents/MyExperiments/mkproject.sh` (version controlled)
+The mkproject utility is maintained in its own standalone repository:
+
+- **Repository**: `/Users/sergevilleneuve/Documents/mkproject/`
 - **Loaded by**: `~/.zshrc` (sources the script automatically)
 
-This ensures the script is backed up in git and never lost again.
+See the mkproject repository for full documentation and source code.
 
 ## Project-Specific Commands
 
