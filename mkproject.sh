@@ -102,7 +102,11 @@ EOF
             echo "✓ Node.js project initialized"
             ;;
         3)
-            npm create vite@latest . -- --template react
+            # Create Vite React project in a temp directory then move files
+            temp_dir=$(mktemp -d)
+            (cd "$temp_dir" && npm create vite@latest temp-project -- --template react && \
+             cd temp-project && cp -r . "$project_path/" && cd .. && rm -rf temp-project) 2>&1 | grep -v "^$"
+
             echo "✓ React + Vite project created"
             echo ""
             echo "Next steps:"
